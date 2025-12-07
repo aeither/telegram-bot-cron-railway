@@ -41,6 +41,11 @@ source .env && curl -X POST http://localhost:3000/cron/trigger \
 3) Start command: `bun start`  
 4) Add a Railway Cron hitting `POST /cron/trigger` with header `Authorization: Bearer $CRON_SECRET`
 
+### Railway Function cron trigger
+- In Railway Functions, create a new scheduled function (e.g. `cron-ping`) and paste the contents of `railway-cron-function.ts`.
+- Replace `REPLACE_WITH_YOUR_RAILWAY_DOMAIN` in the `url` with your service's internal hostname (e.g. `myapp.up.railway.app` → `myapp.railway.internal`).
+- Set `CRON_SECRET` and `TG_CHAT_ID` as env vars for the function so it can authorize and target the chat.
+
 ## Telegram webhook
 Point Telegram to your Railway URL:
 ```bash
