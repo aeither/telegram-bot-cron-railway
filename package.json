@@ -1,0 +1,30 @@
+{
+  "name": "telegram-bot-cron-railway",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun run --watch src/worker.ts",
+    "dev:ngrok": "ngrok http --domain=basically-enough-clam.ngrok-free.app 3000",
+    "dev:all": "concurrently \"bun run --watch src/worker.ts\" \"ngrok http --domain=basically-enough-clam.ngrok-free.app 3000\"",
+    "start": "bun run src/worker.ts",
+    "bot:commands": "bun run scripts/setupBotCommands.ts",
+    "bot:clear": "bun run scripts/setupBotCommands.ts --clear",
+    "bot:commands:list": "bun run scripts/setupBotCommands.ts --list"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^22.19.1",
+    "tsx": "^4.21.0",
+    "concurrently": "^9.2.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "grammy": "^1.38.4",
+    "hono": "^4.10.7",
+    "dotenv": "^16.6.1"
+  },
+  "packageManager": "bun@1.1.26"
+}
