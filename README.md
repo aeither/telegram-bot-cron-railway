@@ -13,6 +13,7 @@ Create `.env` (see `env.example`):
 BOT_TOKEN=your-telegram-bot-token
 CRON_SECRET=super-secret-string   # For /cron/trigger auth
 PORT=3000                         # Optional; Railway sets PORT automatically
+TG_CHAT_ID=1234567                # Optional; For testing cron triggers
 ```
 
 ## Install
